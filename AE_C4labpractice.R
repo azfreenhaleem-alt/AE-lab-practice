@@ -22,3 +22,7 @@ df=84
 Fstat<-((r2_u-r2_r)/q)/((1-r2_u)/df)
 waldtest(model2,model1)
 #since the fcal=fstat the null hyp is accepted
+#wider confidence intervals:lesscertain with results
+confint(model,level=0.99)
+library(stargazer)
+stargazer(model,type="text",title="regression")
