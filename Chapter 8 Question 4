@@ -18,4 +18,5 @@ y<-fitted(model1)
 ysq<- y^2
 model4<-lm(uhat_sq~y+ysq)
 summary(model4)
+#p_value is 0.0645, hence null is rejected
 
