@@ -1,1 +1,21 @@
+library(wooldridge)
+#parti
+df<- data("vote1")
+model1<- lm(voteA~prtystrA+democA+lexpendA+lexpendB, data=vote1)
+summary(model1)
+
+#part ii
+uhat<-model1$residuals
+model2<-lm(uhat~prtystrA+democA+lexpendA+lexpendB, data=vote1)
+summary(model2)
+
+uhat_sq<-(uhat)^2
+model3<-lm(uhat_sq~prtystrA+democA+lexpendA+lexpendB, data=vote1)
+summary(model3)
+
+#partiii
+y<-fitted(model1)
+ysq<- y^2
+model4<-lm(uhat_sq~y+ysq)
+summary(model4)
 
